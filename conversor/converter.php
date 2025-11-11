@@ -16,7 +16,7 @@
 
             $real   = $_POST['money'];
             $cotacao       = 5.31;
-            $dolar   = $carteira / $cotacao;
+            $dolar   = $real/$cotacao;
 
             /*
             echo '<p>Seus R$' . number_format($real, 2, ',', '.') . ' equivalem a US$' . number_format($dolar, 2, ',', '.') . '</p>';
@@ -27,6 +27,8 @@
             // Formatação de moedas com internacionalização!
             $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
             echo '<p>Seus ' . numfmt_format_currency($padrao,$real,"BRL") . ' equivalem a ' . numfmt_format_currency($padrao,$dolar,"USD") . '</p>';
+            
+            echo'<p>* cotação fixa </p>';
 
             ?>
         </form>

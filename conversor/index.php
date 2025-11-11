@@ -11,7 +11,7 @@
         <h1>Conversor de moedas</h1>
         <form action="converter.php" method="post">
             <p>Quantos R$ você tem na carteira?</p>
-            <input type="number" name="money" id="idmoney">
+            <input type="number" name="money" id="idmoney" step="0.01">
             <input type="submit" value="Converter">
         </form>
     </main>
