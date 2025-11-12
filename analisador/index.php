@@ -10,8 +10,8 @@
     <main>
         <h1>Analisador de numero real</h1>
         <form action="analisar.php" method="post">
-            <p>Digite um numero real</p>
-            <input type="text" name="number" id="idnumber">
+            <label for="number">Digite um numero real: </label>
+            <input type="number" name="number" id="idnumber" step="0.001">
             <input type="submit" value="Analisar">
         </form>
     </main>

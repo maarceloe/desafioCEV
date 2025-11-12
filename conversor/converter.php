@@ -11,27 +11,24 @@
 <body>
     <main>
         <h1>Conversor de moedas</h1>
-        <form action="converter.php" method="post">
-            <?php
+        <?php
 
-            $real   = $_POST['money'];
-            $cotacao       = 5.31;
-            $dolar   = $real/$cotacao;
+        $real = $_POST['money'] ?? 0;
+        $cotacao = 5.31;
+        $dolar = $real / $cotacao;
 
-            /*
+        /*
             echo '<p>Seus R$' . number_format($real, 2, ',', '.') . ' equivalem a US$' . number_format($dolar, 2, ',', '.') . '</p>';
             echo '<p>*cotação fixa de ' . $cotacao . ' definida no diretamente no codigo</p>';
             echo "<button>Voltar</button>";
             */
 
-            // Formatação de moedas com internacionalização!
-            $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
-            echo '<p>Seus ' . numfmt_format_currency($padrao,$real,"BRL") . ' equivalem a ' . numfmt_format_currency($padrao,$dolar,"USD") . '</p>';
-            
-            echo'<p>* cotação fixa </p>';
+        // Formatação de moedas com internacionalização!
+        $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+        echo "<p>Seus " . numfmt_format_currency($padrao, $real, "BRL") . " equivalem a <strong>" . numfmt_format_currency($padrao, $dolar, "USD") . "</stong></p>";
 
-            ?>
-        </form>
+        ?>
+        <button onclick="javascript:history.go(-1)">Voltar</button>
     </main>
 </body>
 
