@@ -9,10 +9,9 @@
 <body>
     <main>
         <?php 
+        //pegando os dados enviados no formulario retroalimentado pelo metodo get
 
-                $dividendo = $_GET['dividendo'] ?? 0;
-                $divisor = $_GET['divisor'] ?? 0;
-            ?>
+        ?>
         <h1>Anatomia de uma divisão</h1>
         <form action="<?php  $_SERVER['PHP_SELF'] ?>" method="get">
             <label for="dividendo">Dividendo</label>
@@ -26,7 +25,6 @@
     <section>
         <h1>Estrutura da Divisão</h1>
         <?php 
-
             $divisao = $dividendo/$divisor;
             $divinteiro = (int) $divisao;
             $resto = $dividendo%$divisor;
